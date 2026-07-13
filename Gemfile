@@ -11,7 +11,7 @@ gem 'rake'
 gem 'rspec', '~> 3.11'
 gem 'rubocop-performance', '~> 1.24'
 gem 'rubocop-rake', '~> 0.7'
-gem 'simplecov', '>= 0.19'
+gem 'simplecov', '~> 1' if RUBY_VERSION >= '3.2'
 gem 'yard'
 
 # FIXME: Remove when the next prism version is released.
