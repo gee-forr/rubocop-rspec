@@ -5,14 +5,13 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'bump'
-gem 'irb' # undeclared dependency of yard
 gem 'rack'
 gem 'rake'
 gem 'rspec', '~> 3.11'
 gem 'rubocop-performance', '~> 1.24'
 gem 'rubocop-rake', '~> 0.7'
 gem 'simplecov', '~> 1' if RUBY_VERSION >= '3.2'
-gem 'yard'
+gem 'yard', '>= 0.9.39'
 
 # FIXME: Remove when the next prism version is released.
 if RUBY_VERSION < '3.0' || RUBY_ENGINE == 'jruby'
