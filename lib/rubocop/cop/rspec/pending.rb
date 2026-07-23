@@ -34,6 +34,7 @@ module RuboCop
       #
       class Pending < Base
         include SkipOrPending
+        include InsideExampleGroup
 
         MSG = 'Pending spec found.'
 
@@ -58,11 +59,6 @@ module RuboCop
           }
         PATTERN
 
-        # @!method example_skip_or_pending?(node)
-        def_node_matcher :example_skip_or_pending?, <<~PATTERN
-          (send nil? {#Examples.skipped #Examples.pending} ...)
-        PATTERN
-
         def on_send(node)
           return unless pending_block?(node) || skipped?(node)
           return unless inside_example_group?(node)
@@ -71,15 +67,6 @@ module RuboCop
         end
 
         private
-
-        def skip_in_non_rspec_context?(node)
-          return false unless example_skip_or_pending?(node)
-          return false if node.block_node
-
-          node.each_ancestor(:block).none? do |ancestor|
-            example?(ancestor) || example_group?(ancestor)
-          end
-        end
 
         def skipped?(node)
           (skippable?(node) && skipped_in_metadata?(node)) ||
