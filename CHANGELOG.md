@@ -1042,6 +1042,7 @@ Compatibility release so users can upgrade RuboCop to 0.51.0. No new features.
 [@francois-ferrandis]: https://github.com/francois-ferrandis
 [@franzliedke]: https://github.com/franzliedke
 [@g-rath]: https://github.com/G-Rath
+[@gee-forr]: https://github.com/gee-forr
 [@geniou]: https://github.com/geniou
 [@gsamokovarov]: https://github.com/gsamokovarov
 [@harry-graham]: https://github.com/harry-graham
