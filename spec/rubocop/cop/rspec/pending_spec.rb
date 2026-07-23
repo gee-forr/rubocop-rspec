@@ -234,7 +234,7 @@ RSpec.describe RuboCop::Cop::RSpec::Pending do
     RUBY
   end
 
-  it "avoids a false positive with SimpleCov filters" do
+  it 'avoids a false positive with SimpleCov filters' do
     expect_no_offenses(<<~RUBY)
       require 'simplecov'
 
