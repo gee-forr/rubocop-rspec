@@ -122,7 +122,7 @@ RSpec.describe RuboCop::Cop::RSpec::Pending do
     RUBY
   end
 
-  # NOTE: heredoc forced to single quotes to avoid interpolation of `\` in the test string
+  # NOTE: single quote heredoc avoids interpolation of `\` in test string
   it 'flags blocks with pending: string metadata and line break by `\`' do
     expect_offense(in_rspec_describe(<<~'RUBY'))
       it "test", pending: 'test' \
