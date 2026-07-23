@@ -65,7 +65,7 @@ module RuboCop
 
         def on_send(node)
           return unless pending_block?(node) || skipped?(node)
-          return if skip_in_non_rspec_context?(node)
+          return unless inside_example_group?(node)
 
           add_offense(node)
         end
